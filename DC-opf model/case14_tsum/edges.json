@@ -1,0 +1,102 @@
+{
+    "br1": {
+        "from": "bus1",
+        "to": "bus2",
+        "directed": false
+    },
+    "br2": {
+        "from": "bus1",
+        "to": "bus5",
+        "directed": false
+    },
+    "br3": {
+        "from": "bus2",
+        "to": "bus3",
+        "directed": false
+    },
+    "br4": {
+        "from": "bus2",
+        "to": "bus4",
+        "directed": false
+    },
+    "br5": {
+        "from": "bus2",
+        "to": "bus5",
+        "directed": false
+    },
+    "br6": {
+        "from": "bus3",
+        "to": "bus4",
+        "directed": false
+    },
+    "br7": {
+        "from": "bus4",
+        "to": "bus5",
+        "directed": false
+    },
+    "br8": {
+        "from": "bus4",
+        "to": "bus7",
+        "directed": false
+    },
+    "br9": {
+        "from": "bus4",
+        "to": "bus9",
+        "directed": false
+    },
+    "br10": {
+        "from": "bus5",
+        "to": "bus6",
+        "directed": false
+    },
+    "br11": {
+        "from": "bus6",
+        "to": "bus11",
+        "directed": false
+    },
+    "br12": {
+        "from": "bus6",
+        "to": "bus12",
+        "directed": false
+    },
+    "br13": {
+        "from": "bus6",
+        "to": "bus13",
+        "directed": false
+    },
+    "br14": {
+        "from": "bus7",
+        "to": "bus8",
+        "directed": false
+    },
+    "br15": {
+        "from": "bus7",
+        "to": "bus9",
+        "directed": false
+    },
+    "br16": {
+        "from": "bus9",
+        "to": "bus10",
+        "directed": false
+    },
+    "br17": {
+        "from": "bus9",
+        "to": "bus14",
+        "directed": false
+    },
+    "br18": {
+        "from": "bus10",
+        "to": "bus11",
+        "directed": false
+    },
+    "br19": {
+        "from": "bus12",
+        "to": "bus13",
+        "directed": false
+    },
+    "br20": {
+        "from": "bus13",
+        "to": "bus14",
+        "directed": false
+    }
+}
