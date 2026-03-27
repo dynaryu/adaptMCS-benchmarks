@@ -156,8 +156,10 @@ def load2disp(ppc):
     if gen.shape[1] < 21:
         gen = np.hstack([gen, np.zeros((gen.shape[0], 21 - gen.shape[1]))])
 
-    # Find load buses
-    load_idx = np.where(bus[:, PD] != 0)[0]
+    # Find load buses (only positive loads; negative PD are generation injections
+    # that should not be converted to dispatchable loads — doing so creates
+    # PMIN = -PD > 0 > PMAX = 0, making the OPF infeasible)
+    load_idx = np.where(bus[:, PD] > 0)[0]
     nld = len(load_idx)
 
     if nld == 0:

@@ -1,2 +1,0 @@
-from rips.utils import *
-
