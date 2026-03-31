@@ -20,7 +20,7 @@ Usage:
 import numpy as np
 from typing import Dict, Tuple, Optional
 
-from func_dcopt_py import load_case, add_branch_capacity, func_dcopt
+from func_dcopt_py import load_case, add_branch_capacity, func_dcopt, DcopfPrecomputed
 
 
 def make_dcopt_sfun(
@@ -50,6 +50,9 @@ def make_dcopt_sfun(
     nb = len(bus_ids)
     ng = len(gen_bus_ids)
     nl = ppc0['branch'].shape[0]
+
+    # Precomputed solver for fast repeated calls
+    solver = DcopfPrecomputed(ppc0)
 
     print(f"DC-OPF sfun ready: {nb} buses, {ng} generators, {nl} branches")
 
@@ -89,8 +92,8 @@ def make_dcopt_sfun(
                 tsum_state = comps_st[key]
                 system_state[nb + j] = branch_state_map.get(tsum_state, 0.0)
 
-        # Compute blackout
-        blackout_size, flag = func_dcopt(system_state, ppc0)
+        # Compute blackout (using precomputed solver for speed)
+        blackout_size, flag = solver(system_state)
 
         if flag == 0:
             sys_st = 0
